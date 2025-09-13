@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Story Script", sans-serif;;
+}
+
+body{
+    background: #333;
+    padding: 20px;
+    color: yellowgreen;
+    min-height: 100vh;
+}
+
+/*==== Grid Layout ====*/
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+    border: 5px solid black;
+    border-radius: 20px;
+    grid-template-areas: 
+    "pics pics narration narration"
+    "hob hob life life";  
+}
+
+/* ==== Grid Items. CSS Grid explicit line placement (grid-column / grid-row positioning). ==== */
+/* .pics{
+grid-column: 1 / 3 ;
+}
+#narration {
+    grid-column: 3 / 5;
+}
+.hob {
+    grid-column: 1 / 3;
+}
+.life {
+    grid-column: 3 / 5;
+} */
+
+/* ===Grid areas ===*/
+
+.pics{
+    grid-area: pics ;
+}
+#narration {
+    grid-area: narration;
+}
+.hob {
+    grid-area: hob;
+}
+.life {
+    grid-column: life;
+}
+
+
+.pics img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    margin-top: 3%;
+    margin-left: 5px;
+ } 
+
+#narration {
+    padding: 100px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-top: 30px;
+    border: 5px solid red;    
+}
+
+ h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+p {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.hob, .life {
+    text-align: center;
+    /* border: 3px solid red;
+    border-radius: 5px;
+    background-color: aquamarine; */
+}
+
+.hob li {
+    text-align: start;
+    margin-left: 20px;
+}
+
+.hob p:hover {
+    text-align: justify;
+    padding-left: 50px;
+    margin-bottom: 20px;
+    border: 3px solid red;
+    border-radius: 5px;
+}
+.life p {
+    text-align: center;
+}
+
+h3 {
+    padding-left: 10px;
+}
+
+/* ===== Responsive Breakpoints ===== */
+/* @media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pics, #narration, .hob, .life {
+        grid-column: span 2; /* Each spans full width of 2 columns */
+    }
+} */
+
+
+
+/* Tablet (≤1024px): 2-column layout */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "pics narration"
+            "hob  life";
+    }
+}
+
+/* Mobile (≤600px): 1-column layout */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "pics"
+            "narration"
+            "hob"
+            "life";
+    }
+
+    #narration {
+        padding: 20px; /* Reduce padding */
+        margin: 10px;
+    }
+/* 
+    .pics img {
+    border-radius: 50%;
+    width: 90%;
+    height: auto;
+    margin-top: 3%;
+    margin-left: 1.5rem;
+    } */
+
+}
