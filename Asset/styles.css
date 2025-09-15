@@ -21,6 +21,7 @@ body{
     gap: 40px;
     border: 5px solid black;
     border-radius: 20px;
+    align-items: center;
     grid-template-areas: 
     "pics pics narration narration"
     "hob hob life life";  
@@ -60,8 +61,8 @@ grid-column: 1 / 3 ;
     border-radius: 50%;
     width: 100%;
     height: auto;
-    margin-top: 3%;
-    margin-left: 5px;
+    /* margin-top: 100px; */
+    margin-left: 15px;
  } 
 
 #narration {
@@ -84,6 +85,7 @@ p {
 
 .hob, .life {
     text-align: center;
+    margin-top: 50px;
     /* border: 3px solid red;
     border-radius: 5px;
     background-color: aquamarine; */
@@ -116,7 +118,7 @@ h3 {
     }
 
     .pics, #narration, .hob, .life {
-        grid-column: span 2; /* Each spans full width of 2 columns */
+        grid-column: span 2; /* Each spans full width of 2 columns 
     }
 } */
 
@@ -133,7 +135,7 @@ h3 {
 }
 
 /* Mobile (≤600px): 1-column layout */
-@media (max-width: 600px) {
+ @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -144,16 +146,19 @@ h3 {
     }
 
     #narration {
-        padding: 20px; /* Reduce padding */
-        margin: 10px;
+        padding: 10px; /* Reduce padding */
+        /* margin: 10px; */
     }
-/* 
-    .pics img {
+/*  */
+     .pics img {
     border-radius: 50%;
-    width: 90%;
+    width: 80%;       /* scale with screen */
+    max-width: 300px; /* don’t exceed 300px */
     height: auto;
-    margin-top: 3%;
-    margin-left: 1.5rem;
-    } */
+    display: block;
+    margin: 0 auto;   /* center image */
+    object-fit: cover;
+    
+    }
 
 }
